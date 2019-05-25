@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import axios from 'axios'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    mensaje: null
+  }
+  componentDidMount = async () => {
+    const url = 'http://192.168.0.108:3001'
+    const route = '/foro'
+    const {data: resp} = await axios.get(`${url}${route}`);
+    this.setState({
+      mensaje: resp.user
+    })
+  }
+  render(){
+    const { mensaje } = this.state;
+    return (
+      <div className="App">
+        {mensaje}
+      </div>
+    );
+  }
 }
 
 export default App;

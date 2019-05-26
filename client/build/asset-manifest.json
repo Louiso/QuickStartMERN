@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/QuickStartMERN/static/css/main.fd37332e.chunk.css",
+    "main.js": "/QuickStartMERN/static/js/main.815775c9.chunk.js",
+    "main.js.map": "/QuickStartMERN/static/js/main.815775c9.chunk.js.map",
+    "runtime~main.js": "/QuickStartMERN/static/js/runtime~main.9fd33669.js",
+    "runtime~main.js.map": "/QuickStartMERN/static/js/runtime~main.9fd33669.js.map",
+    "static/js/2.569ad7c2.chunk.js": "/QuickStartMERN/static/js/2.569ad7c2.chunk.js",
+    "static/js/2.569ad7c2.chunk.js.map": "/QuickStartMERN/static/js/2.569ad7c2.chunk.js.map",
+    "index.html": "/QuickStartMERN/index.html",
+    "precache-manifest.1cf6c55e28ec3b155c0cf460568491a5.js": "/QuickStartMERN/precache-manifest.1cf6c55e28ec3b155c0cf460568491a5.js",
+    "service-worker.js": "/QuickStartMERN/service-worker.js",
+    "static/css/main.fd37332e.chunk.css.map": "/QuickStartMERN/static/css/main.fd37332e.chunk.css.map"
+  }
+}

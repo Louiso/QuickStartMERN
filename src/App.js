@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios'
-import config from './config'
+import { backendUri } from './config'
 
 class App extends React.Component {
   state = {
     mensaje: null
   }
   componentDidMount = async () => {
-    const url = config.server.http.getUri()
+    const url = backendUri
     const route = '/foro'
     const {data: resp} = await axios.get(`${url}${route}`);
     this.setState({

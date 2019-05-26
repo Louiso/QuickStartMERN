@@ -1,5 +1,7 @@
 import env from './env'
 
-const config = {...env};
+const backendUri = env.server.http.getUri();
 
-export default config;
+export {
+  backendUri
+};

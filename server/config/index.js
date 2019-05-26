@@ -1,4 +1,4 @@
-import ModelServer from '../../src/helpers/ModelServer'
+import ModelServer from '../helpers/ModelServer'
 const config = {
   client : {
     http: new ModelServer({

@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
@@ -19,12 +20,14 @@
     "react-scripts": "3.0.1"
   },
   "scripts": {
-    "start:client": "react-scripts start",
-    "build:client": "react-scripts build",
+    "dev:client": "react-scripts start",
+    "dev:server": "eval $(cat .env) nodemon bin/www --watch server",
     "test:client": "react-scripts test",
     "eject": "react-scripts eject",
-    "start:server": "eval $(cat .env) nodemon bin/www --watch server",
-    "build:server": "babel server -d /dist-server"
+    "build:client": "react-scripts build",
+    "build:server": "babel server -d dist-server/",
+    "build": "yarn build:client && yarn build:server",
+    "start": "yarn build && eval $(cat .env.production) node dist-server"
   },
   "eslintConfig": {
     "extends": "react-app"

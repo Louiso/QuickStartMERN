@@ -2,7 +2,9 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "https://louiso.github.io/QuickStartMERN/",
   "dependencies": {
+    "antd": "^3.18.2",
     "axios": "^0.18.0",
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
@@ -17,7 +19,8 @@
     "morgan": "^1.9.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "styled-components": "^4.2.0"
   },
   "scripts": {
     "dev:client": "react-scripts start",
@@ -26,7 +29,7 @@
     "eject": "react-scripts eject",
     "build:client": "react-scripts build",
     "build:server": "babel server -d dist-server/",
-    "clean":"rm -rf build-app/* && rmdir build-app",
+    "clean": "rm -rf build-app/* && rmdir build-app",
     "build": "yarn clean && yarn build:client && yarn build:server && mkdir build-app && mv build/ build-app/dist-client && mv dist-server/ build-app/dist-server",
     "start": "yarn build && eval $(cat .env.production) node build-app/dist-server"
   },

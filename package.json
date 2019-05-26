@@ -26,8 +26,9 @@
     "eject": "react-scripts eject",
     "build:client": "react-scripts build",
     "build:server": "babel server -d dist-server/",
-    "build": "yarn build:client && yarn build:server",
-    "start": "yarn build && eval $(cat .env.production) node dist-server"
+    "clean":"rm -rf build-app/* && rmdir build-app",
+    "build": "yarn clean && yarn build:client && yarn build:server && mkdir build-app && mv build/ build-app/dist-client && mv dist-server/ build-app/dist-server",
+    "start": "yarn build && eval $(cat .env.production) node build-app/dist-server"
   },
   "eslintConfig": {
     "extends": "react-app"

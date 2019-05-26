@@ -37,10 +37,10 @@ app.use(_bodyParser2.default.urlencoded({ extended: false }));
 app.use(_bodyParser2.default.json());
 
 if (process.env.NODE_ENV === 'prod') {
-  app.use(_express2.default.static(_path2.default.resolve(__dirname, '../build')));
+  app.use(_express2.default.static(_path2.default.resolve(__dirname, '../dist-client')));
 
   app.get('/', function (req, res) {
-    res.sendFile(_path2.default.resolve(__dirname, '../build/index.html'));
+    res.sendFile(_path2.default.resolve(__dirname, '../dist-client/index.html'));
   });
 } else {
   app.use((0, _cors2.default)({

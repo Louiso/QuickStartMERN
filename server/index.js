@@ -12,10 +12,10 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 if(process.env.NODE_ENV==='prod'){
-  app.use(express.static(path.resolve(__dirname,'../build')));
+  app.use(express.static(path.resolve(__dirname,'../dist-client')));
   
   app.get('/',(req,res) => {
-    res.sendFile(path.resolve(__dirname,'../build/index.html'));
+    res.sendFile(path.resolve(__dirname,'../dist-client/index.html'));
   });
 }else{
   app.use(cors({

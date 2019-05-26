@@ -29,6 +29,6 @@ const getForoById = ({id},{user, edit}) => {
   }
 }
 
-module.exports = {
+export {
   getForoById
 }

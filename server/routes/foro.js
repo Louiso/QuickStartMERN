@@ -1,14 +1,15 @@
-const { Router } = require('express');
-const { getForoById } = require('../controllers/foro');
-const foroRoute = Router();
+import { Router } from 'express'
+import { getForoById } from '../routes/foro'
 
-foroRoute.get('/',(req,res) => {
+const foro = Router();
+
+foro.get('/',(req,res) => {
   res.json({
     user: 'Vallugas esta cagando'
   });
 });
 
-foroRoute.get('/:id',(req,res) => {
+foro.get('/:id',(req,res) => {
   const { params: id } = req;
   const foro = getForoById({id},null);
   res.json({
@@ -16,4 +17,4 @@ foroRoute.get('/:id',(req,res) => {
   })
 })
 
-module.exports = foroRoute;
+module.exports = foro;

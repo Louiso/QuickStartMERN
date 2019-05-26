@@ -1,20 +1,22 @@
-const express = require('express');
+import express  from 'express'
+import bodyParser from 'body-parser'
+import morgan from 'morgan'
+import cors from 'cors'
+import routes from './routes'
+import config from './config'
 // const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-const morgan = require('morgan');
-const api = require('./routes');
-const cors = require('cors');
 const app = express();
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+
+console.log(config.client.http.getUri());
 app.use(cors({
-  origin: 'http://localhost:3000'
+  origin: config.client.http.getUri()
 }))
-app.use(api)
+app.use(routes)
 
-const PORT = process.env.PORT || 3001;
-
+const PORT = process.env.BACKEND_PORT;
 
 app.listen(PORT, () => {
   console.log(`Server running on port : ${PORT}`);
